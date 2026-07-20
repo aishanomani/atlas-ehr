@@ -33,14 +33,12 @@ This website provides information about:
 ## Project Structure
 
 ```text
-company-website/
+atlas-ehr/
 ├── index.html
 ├── about.html
 ├── services.html
 ├── contact.html
-├── css/
-│   └── style.css
-├── js/
-│   └── main.js
-├── images/
+├── style.css
+├── main.js
+├── atlas-health-systems-logo.jpg
 └── README.md
