@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Contact Atlas Health Systems to discuss electronic health record solutions."
+  >
+
+  <title>Contact Us | Atlas Health Systems</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Michroma&display=swap"
+  rel="stylesheet"
+>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img
+          src="images/atlas-health-systems-logo.jpg"
+          alt="Atlas Health Systems logo"
+        >
+
+        <span>Atlas Health Systems</span>
+      </a>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Solutions</a></li>
+
+        <li>
+          <a href="contact.html" class="nav-button">
+            Contact Us
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <p class="eyebrow">Contact Atlas</p>
+
+        <h1>
+          Let’s discuss your hospital’s
+          <span class="gradient-text">
+            digital healthcare needs
+          </span>
+        </h1>
+
+        <p>
+          Tell us about your current patient record system, operational
+          challenges, infrastructure, and goals.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-layout">
+        <div class="contact-information">
+          <p class="section-label">Get in Touch</p>
+
+          <h2>
+            Start a conversation with our team
+          </h2>
+
+          <p>
+            We welcome inquiries from hospitals, clinics, healthcare
+            professionals, implementation partners, and digital health
+            organizations.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span class="contact-detail-label">
+                Email
+              </span>
+
+              <a href="mailto:contact@atlashealthsystems.com">
+                contact@atlashealthsystems.com
+              </a>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail-label">
+                Phone
+              </span>
+
+              <a href="tel:+16149990408">
+                +1 (614) 999 0408
+              </a>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail-label">
+                Headquarters
+              </span>
+
+              <p>Columbus, Ohio, USA</p>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail-label">
+                Business Inquiries
+              </span>
+
+              <p>
+                Hospital partnerships, demonstrations, implementation,
+                and product discussions
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h2>Tell us about your organization</h2>
+
+          <p>
+            Complete the form below and our team will review your
+            inquiry.
+          </p>
+
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/xlgqnjpy"
+            method="POST"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First name</label>
+
+                <input
+                  type="text"
+                  id="first-name"
+                  name="firstName"
+                  autocomplete="given-name"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="last-name">Last name</label>
+
+                <input
+                  type="text"
+                  id="last-name"
+                  name="lastName"
+                  autocomplete="family-name"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Work email</label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="organization">
+                Hospital or organization
+              </label>
+
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                autocomplete="organization"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="role">Your role</label>
+
+              <input
+                type="text"
+                id="role"
+                name="role"
+                placeholder="Example: Hospital administrator"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="current-system">
+                How do you currently manage patient records?
+              </label>
+
+              <select
+                id="current-system"
+                name="currentSystem"
+                required
+              >
+                <option value="" selected disabled>
+                  Select an option
+                </option>
+
+                <option value="paper">
+                  Primarily paper records
+                </option>
+
+                <option value="hybrid">
+                  Paper and digital systems
+                </option>
+
+                <option value="digital">
+                  Existing digital or EHR system
+                </option>
+
+                <option value="other">
+                  Other
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="interest">
+                What are you interested in?
+              </label>
+
+              <select id="interest" name="interest" required>
+                <option value="" selected disabled>
+                  Select an option
+                </option>
+
+                <option value="ehr">
+                  Electronic health records
+                </option>
+
+                <option value="offline">
+                  Offline-capable hospital system
+                </option>
+
+                <option value="implementation">
+                  Implementation and training
+                </option>
+
+                <option value="partnership">
+                  Partnership opportunity
+                </option>
+
+                <option value="demo">
+                  Product demonstration
+                </option>
+
+                <option value="other">
+                  Other
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">
+                How can we help?
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Tell us about your hospital and current challenges."
+                required
+              ></textarea>
+            </div>
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Atlas Health Systems website inquiry"
+            >
+
+            <button
+              type="submit"
+              class="button primary-button form-submit-button"
+            >
+              Send Inquiry
+            </button>
+
+            <p class="form-note">
+              Please do not submit patient names, medical records, or
+              confidential health information through this form.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Before We Meet</p>
+
+            <h2>
+              Helpful topics for an initial conversation
+            </h2>
+          </div>
+
+          <p>
+            These topics help us understand your organization’s needs.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-number">01</div>
+            <h3>Current Record Process</h3>
+
+            <p>
+              Paper records, digital tools, an EHR platform, or a
+              combination of systems.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">02</div>
+            <h3>Hospital Infrastructure</h3>
+
+            <p>
+              Electricity, internet access, computers, networking, and
+              technical support.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03</div>
+            <h3>Current Challenges</h3>
+
+            <p>
+              Documentation, retrieving records, software reliability,
+              or care coordination.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">04</div>
+            <h3>Priority Features</h3>
+
+            <p>
+              Registration, clinical notes, medications, labs,
+              appointments, billing, or reporting.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">05</div>
+            <h3>Staff and Training</h3>
+
+            <p>
+              Which teams will use the system and what support they need.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">06</div>
+            <h3>Implementation Goals</h3>
+
+            <p>
+              Pilot programs, full implementation, replacement, or
+              future planning.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="footer-logo">
+          Atlas Health Systems
+        </a>
+
+        <p>
+          Modern electronic health record solutions for Ethiopian
+          hospitals and healthcare providers.
+        </p>
+      </div>
+
+      <div>
+        <h3>Company</h3>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Solutions</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div>
+        <h3>Solutions</h3>
+        <a href="services.html">Electronic Health Records</a>
+        <a href="services.html">Patient Management</a>
+        <a href="services.html">Implementation and Training</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>
+        &copy; <span id="current-year">2026</span>
+        Atlas Health Systems. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
