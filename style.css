@@ -1528,7 +1528,7 @@
   }
 
 /* =========================================================
-   ANIMATED GLOWING GRID LINES
+   HORIZONTAL GRID-BOX LIGHT WAVE
    ========================================================= */
 
 .hero {
@@ -1537,189 +1537,109 @@
   position: relative;
 }
 
-.hero::before {
-  background-image:
-    linear-gradient(
-      rgba(5, 17, 36, 0.045) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(5, 17, 36, 0.045) 1px,
-      transparent 1px
-    );
-  background-position: center;
-  background-size: 48px 48px;
-  content: "";
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
-  z-index: -2;
-}
-
-.hero::after {
-  animation:
-    atlas-grid-scan-horizontal 8s linear infinite,
-    atlas-grid-scan-vertical 11s linear infinite;
-
-  background-image:
-    linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent calc(50% - 2px),
-      rgba(32, 199, 178, 0.12) calc(50% - 2px),
-      rgba(32, 199, 178, 0.85) 50%,
-      rgba(38, 169, 209, 0.12) calc(50% + 2px),
-      transparent calc(50% + 2px),
-      transparent 100%
-    ),
-
-    linear-gradient(
-      to right,
-      transparent 0,
-      transparent calc(50% - 2px),
-      rgba(38, 169, 209, 0.12) calc(50% - 2px),
-      rgba(38, 169, 209, 0.8) 50%,
-      rgba(32, 199, 178, 0.12) calc(50% + 2px),
-      transparent calc(50% + 2px),
-      transparent 100%
-    );
-
-  background-position:
-    0 -100%,
-    -100% 0;
-
-  background-repeat: no-repeat;
-
-  background-size:
-    100% 180px,
-    180px 100%;
-
-  content: "";
-  filter:
-    drop-shadow(0 0 5px rgba(32, 199, 178, 0.7))
-    drop-shadow(0 0 14px rgba(38, 169, 209, 0.38));
-
-  inset: 0;
-  opacity: 0.68;
-  pointer-events: none;
-  position: absolute;
-  z-index: -1;
-}
-
-@keyframes atlas-grid-scan-horizontal {
-  0% {
-    background-position:
-      0 -180px,
-      -180px 0;
-  }
-
-  100% {
-    background-position:
-      0 calc(100% + 180px),
-      -180px 0;
-  }
-}
-
-@keyframes atlas-grid-scan-vertical {
-  0% {
-    background-position:
-      0 -180px,
-      -180px 0;
-  }
-
-  100% {
-    background-position:
-      0 -180px,
-      calc(100% + 180px) 0;
-  }
-}
-
 .hero-container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero::after {
-    animation: none;
-    opacity: 0;
-  }
-}
-
-.grid-scanner {
+.grid-wave {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(20, 48px);
   inset: 0;
   overflow: hidden;
   pointer-events: none;
   position: absolute;
-  z-index: -1;
+  z-index: 1;
 }
 
-.grid-scanner::before {
-  animation: atlas-horizontal-scan 8s linear infinite;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(32, 199, 178, 0.12),
-    rgba(32, 199, 178, 0.9),
-    rgba(38, 169, 209, 0.12),
-    transparent
-  );
-  box-shadow:
-    0 0 8px rgba(32, 199, 178, 0.55),
-    0 0 25px rgba(38, 169, 209, 0.28);
-  content: "";
-  height: 96px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: -96px;
+.grid-wave span {
+  animation: atlas-box-wave 6s linear infinite;
+  background: rgba(32, 199, 178, 0);
+  border: 1px solid transparent;
+  height: 48px;
+  opacity: 0;
+  width: 48px;
 }
 
-.grid-scanner::after {
-  animation: atlas-vertical-scan 11s linear infinite;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(38, 169, 209, 0.12),
-    rgba(38, 169, 209, 0.86),
-    rgba(32, 199, 178, 0.12),
-    transparent
-  );
-  box-shadow:
-    0 0 8px rgba(38, 169, 209, 0.5),
-    0 0 25px rgba(32, 199, 178, 0.25);
-  bottom: 0;
-  content: "";
-  left: -96px;
-  position: absolute;
-  top: 0;
-  width: 96px;
-}
+.grid-wave span:nth-child(1)  { animation-delay: 0s; }
+.grid-wave span:nth-child(2)  { animation-delay: 0.15s; }
+.grid-wave span:nth-child(3)  { animation-delay: 0.30s; }
+.grid-wave span:nth-child(4)  { animation-delay: 0.45s; }
+.grid-wave span:nth-child(5)  { animation-delay: 0.60s; }
+.grid-wave span:nth-child(6)  { animation-delay: 0.75s; }
+.grid-wave span:nth-child(7)  { animation-delay: 0.90s; }
+.grid-wave span:nth-child(8)  { animation-delay: 1.05s; }
+.grid-wave span:nth-child(9)  { animation-delay: 1.20s; }
+.grid-wave span:nth-child(10) { animation-delay: 1.35s; }
+.grid-wave span:nth-child(11) { animation-delay: 1.50s; }
+.grid-wave span:nth-child(12) { animation-delay: 1.65s; }
+.grid-wave span:nth-child(13) { animation-delay: 1.80s; }
+.grid-wave span:nth-child(14) { animation-delay: 1.95s; }
+.grid-wave span:nth-child(15) { animation-delay: 2.10s; }
+.grid-wave span:nth-child(16) { animation-delay: 2.25s; }
+.grid-wave span:nth-child(17) { animation-delay: 2.40s; }
+.grid-wave span:nth-child(18) { animation-delay: 2.55s; }
+.grid-wave span:nth-child(19) { animation-delay: 2.70s; }
+.grid-wave span:nth-child(20) { animation-delay: 2.85s; }
 
-@keyframes atlas-horizontal-scan {
-  from {
-    transform: translateY(0);
+@keyframes atlas-box-wave {
+  0%,
+  72%,
+  100% {
+    background: rgba(32, 199, 178, 0);
+    border-color: transparent;
+    box-shadow: none;
+    opacity: 0;
   }
 
-  to {
-    transform: translateY(calc(100vh + 192px));
+  80% {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(32, 199, 178, 0.08),
+        rgba(38, 169, 209, 0.14)
+      );
+    border-color: rgba(32, 199, 178, 0.25);
+    box-shadow:
+      inset 0 0 14px rgba(32, 199, 178, 0.16),
+      0 0 12px rgba(32, 199, 178, 0.25),
+      0 0 24px rgba(38, 169, 209, 0.14);
+    opacity: 0.45;
   }
-}
 
-@keyframes atlas-vertical-scan {
-  from {
-    transform: translateX(0);
+  86% {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(32, 199, 178, 0.2),
+        rgba(38, 169, 209, 0.28)
+      );
+    border-color: rgba(32, 199, 178, 0.6);
+    box-shadow:
+      inset 0 0 18px rgba(32, 199, 178, 0.28),
+      0 0 16px rgba(32, 199, 178, 0.45),
+      0 0 34px rgba(38, 169, 209, 0.25);
+    opacity: 0.85;
   }
 
-  to {
-    transform: translateX(calc(100vw + 192px));
+  92% {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(32, 199, 178, 0.08),
+        rgba(38, 169, 209, 0.12)
+      );
+    border-color: rgba(38, 169, 209, 0.22);
+    box-shadow:
+      inset 0 0 10px rgba(32, 199, 178, 0.12),
+      0 0 10px rgba(38, 169, 209, 0.18);
+    opacity: 0.35;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .grid-scanner::before,
-  .grid-scanner::after {
+  .grid-wave span {
     animation: none;
     display: none;
   }
