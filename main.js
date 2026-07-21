@@ -1,6 +1,6 @@
 "use strict";
 
-/* Mobile navigation */
+/* Mobile */
 
 const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector(".nav-links");
@@ -85,23 +85,5 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
     element.classList.add("reveal");
     element.style.transitionDelay = `${(index % 3) * 70}ms`;
     revealObserver.observe(element);
-  });
-}
-
-/* Contact form endpoint check */
-
-const contactForm = document.querySelector(".contact-form");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    const formAction = contactForm.getAttribute("action") || "";
-
-    if (formAction.includes("YOUR-FORMSPREE-ENDPOINT")) {
-      event.preventDefault();
-
-      alert(
-        "The form is not connected yet. Replace YOUR-FORMSPREE-ENDPOINT with your Formspree endpoint."
-      );
-    }
   });
 }
