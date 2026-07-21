@@ -1526,3 +1526,67 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+/* =========================================================
+   ANIMATED HERO GRID GLOW
+   ========================================================= */
+
+.hero {
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::before {
+  background-image:
+    linear-gradient(
+      rgba(5, 17, 36, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5, 17, 36, 0.035) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -2;
+}
+
+.hero::after {
+  animation: atlas-grid-drift 14s linear infinite;
+  background-image:
+    radial-gradient(
+      circle at center,
+      rgba(32, 199, 178, 0.42) 0,
+      rgba(38, 169, 209, 0.24) 18%,
+      rgba(38, 169, 209, 0.08) 38%,
+      transparent 68%
+    );
+  background-position:
+    0 0,
+    96px 144px,
+    240px 48px,
+    384px 240px;
+  background-repeat: repeat;
+  background-size: 192px 192px;
+  content: "";
+  filter: blur(2px);
+  inset: -20%;
+  opacity: 0.45;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+@keyframes atlas-grid-drift {
+  from {
+    transform: translate3d(0, 120px, 0);
+  }
+
+  to {
+    transform: translate3d(0, -120px, 0);
+  }
+}
