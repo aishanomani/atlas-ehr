@@ -1526,3 +1526,201 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+/* =========================================================
+   ANIMATED GLOWING GRID LINES
+   ========================================================= */
+
+.hero {
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::before {
+  background-image:
+    linear-gradient(
+      rgba(5, 17, 36, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5, 17, 36, 0.045) 1px,
+      transparent 1px
+    );
+  background-position: center;
+  background-size: 48px 48px;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -2;
+}
+
+.hero::after {
+  animation:
+    atlas-grid-scan-horizontal 8s linear infinite,
+    atlas-grid-scan-vertical 11s linear infinite;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(50% - 2px),
+      rgba(32, 199, 178, 0.12) calc(50% - 2px),
+      rgba(32, 199, 178, 0.85) 50%,
+      rgba(38, 169, 209, 0.12) calc(50% + 2px),
+      transparent calc(50% + 2px),
+      transparent 100%
+    ),
+
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(50% - 2px),
+      rgba(38, 169, 209, 0.12) calc(50% - 2px),
+      rgba(38, 169, 209, 0.8) 50%,
+      rgba(32, 199, 178, 0.12) calc(50% + 2px),
+      transparent calc(50% + 2px),
+      transparent 100%
+    );
+
+  background-position:
+    0 -100%,
+    -100% 0;
+
+  background-repeat: no-repeat;
+
+  background-size:
+    100% 180px,
+    180px 100%;
+
+  content: "";
+  filter:
+    drop-shadow(0 0 5px rgba(32, 199, 178, 0.7))
+    drop-shadow(0 0 14px rgba(38, 169, 209, 0.38));
+
+  inset: 0;
+  opacity: 0.68;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+@keyframes atlas-grid-scan-horizontal {
+  0% {
+    background-position:
+      0 -180px,
+      -180px 0;
+  }
+
+  100% {
+    background-position:
+      0 calc(100% + 180px),
+      -180px 0;
+  }
+}
+
+@keyframes atlas-grid-scan-vertical {
+  0% {
+    background-position:
+      0 -180px,
+      -180px 0;
+  }
+
+  100% {
+    background-position:
+      0 -180px,
+      calc(100% + 180px) 0;
+  }
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+.grid-scanner {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.grid-scanner::before {
+  animation: atlas-horizontal-scan 8s linear infinite;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(32, 199, 178, 0.12),
+    rgba(32, 199, 178, 0.9),
+    rgba(38, 169, 209, 0.12),
+    transparent
+  );
+  box-shadow:
+    0 0 8px rgba(32, 199, 178, 0.55),
+    0 0 25px rgba(38, 169, 209, 0.28);
+  content: "";
+  height: 96px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: -96px;
+}
+
+.grid-scanner::after {
+  animation: atlas-vertical-scan 11s linear infinite;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(38, 169, 209, 0.12),
+    rgba(38, 169, 209, 0.86),
+    rgba(32, 199, 178, 0.12),
+    transparent
+  );
+  box-shadow:
+    0 0 8px rgba(38, 169, 209, 0.5),
+    0 0 25px rgba(32, 199, 178, 0.25);
+  bottom: 0;
+  content: "";
+  left: -96px;
+  position: absolute;
+  top: 0;
+  width: 96px;
+}
+
+@keyframes atlas-horizontal-scan {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(100vh + 192px));
+  }
+}
+
+@keyframes atlas-vertical-scan {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(100vw + 192px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-scanner::before,
+  .grid-scanner::after {
+    animation: none;
+    display: none;
+  }
+}
