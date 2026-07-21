@@ -1528,7 +1528,7 @@
   }
 
 /* =========================================================
-   ANIMATED HERO GRID GLOW
+   ANIMATED GRID CELLS
    ========================================================= */
 
 .hero {
@@ -1556,37 +1556,67 @@
 }
 
 .hero::after {
-  animation: atlas-grid-drift 14s linear infinite;
+  animation:
+    atlas-cell-rise 16s linear infinite,
+    atlas-cell-pulse 5s ease-in-out infinite;
   background-image:
-    radial-gradient(
-      circle at center,
-      rgba(32, 199, 178, 0.42) 0,
-      rgba(38, 169, 209, 0.24) 18%,
-      rgba(38, 169, 209, 0.08) 38%,
-      transparent 68%
+    linear-gradient(
+      rgba(32, 199, 178, 0.2),
+      rgba(32, 199, 178, 0.2)
+    ),
+    linear-gradient(
+      rgba(38, 169, 209, 0.18),
+      rgba(38, 169, 209, 0.18)
+    ),
+    linear-gradient(
+      rgba(32, 199, 178, 0.16),
+      rgba(32, 199, 178, 0.16)
+    ),
+    linear-gradient(
+      rgba(38, 169, 209, 0.14),
+      rgba(38, 169, 209, 0.14)
     );
   background-position:
-    0 0,
-    96px 144px,
-    240px 48px,
-    384px 240px;
-  background-repeat: repeat;
-  background-size: 192px 192px;
+    10% 85%,
+    38% 110%,
+    67% 92%,
+    88% 118%;
+  background-repeat: no-repeat;
+  background-size:
+    48px 48px,
+    48px 48px,
+    48px 48px,
+    48px 48px;
+  box-shadow:
+    0 0 22px rgba(32, 199, 178, 0.2),
+    0 0 34px rgba(38, 169, 209, 0.15);
   content: "";
-  filter: blur(2px);
-  inset: -20%;
-  opacity: 0.45;
+  filter: blur(0.4px);
+  inset: 0;
+  opacity: 0.75;
   pointer-events: none;
   position: absolute;
   z-index: -1;
 }
 
-@keyframes atlas-grid-drift {
+@keyframes atlas-cell-rise {
   from {
-    transform: translate3d(0, 120px, 0);
+    transform: translateY(140px);
   }
 
   to {
-    transform: translate3d(0, -120px, 0);
+    transform: translateY(-180px);
   }
 }
+
+@keyframes atlas-cell-pulse {
+  0%,
+  100% {
+    opacity: 0.28;
+  }
+
+  50% {
+    opacity: 0.78;
+  }
+}
+
